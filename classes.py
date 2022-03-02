@@ -302,10 +302,10 @@ class Video(object):
                     remaining_duration = max(
                         1, int((time.time() - start_time) * 1000 - capture_duration)
                     )
-                    if cv2.waitKey(remaining_duration) & 0xFF == ord("q"):
+                    if cv2.waitKey(remaining_duration):
                         break
                 else:
-                    if cv2.waitKey(1) & 0xFF == ord("q"):
+                    if cv2.waitKey(1):
                         break            
 
             frameCount += 1
